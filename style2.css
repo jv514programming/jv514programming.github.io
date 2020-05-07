@@ -137,6 +137,7 @@ header{
     margin-top: 400px;
     border: 4px solid rgb(95, 90, 90);
     border-bottom: none;
+    border-top: none;
 }
 
 .main-content-headline{
