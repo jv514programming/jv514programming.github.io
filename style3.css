@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    background-color: rgb(170, 166, 166);
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+/* top content */
+
+header{
+    background-color: rgb(43, 42, 42, .1);
+    background-image: url('race-wallpaper.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: blanchedalmond;
+    text-shadow: 2px 2px 2px black;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family:'Audiowide', cursive;
+}
+
+nav{
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style-type: none;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+li a{
+    
+    color: blanchedalmond;
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+li a:visited{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+li a:hover{
+    background-color: rgb(247, 228, 199, .5);
+    text-decoration: underline;
+}
+
+.headline-div{
+    text-align: center;
+}
+
+.headline-div h1{
+    font-size: 120px;
+    text-shadow: 10px 10px 10px black;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.headline-div h4{
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+button{
+    padding: 5px;
+    border: 2px solid rgb(85, 85, 245);
+}
+
+.rally-signup{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.signup-box{
+    border: 2px solid rgb(85, 85, 245);
+    margin: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    
+
+}
+
+/* main content */
+.main-content-container{
+    font-family: 'Sriracha', cursive;
+    border:2px solid black;
+    border-radius: 5px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 5px;
+    background-color: rgb(224, 221, 221);
+    color: rgb(68, 66, 66);
+}
+
+.checkout-tracks{
+    text-align: center;
+    font-size: 100px;
+    margin: 15px;
+    color: black;
+    text-shadow: 0 0 5px rgb(72, 255, 0);
+    margin-bottom: 80px;
+}
+
+.track-name{
+    text-align: center;
+    font-size: 30px;
+}
+
+.tracks-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.tracks-container div{
+    margin: 100px;
+    margin-top: 50px;
+}
+
+.track-card{
+    width:300px;
+}
+.track-card:hover{
+    width: 500px;
+}
+.track-card:hover > img{
+    width: 500px;
+    height: 500px;
+}
+
+.tracks-img:hover{
+    border-radius: 5px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 20px 20px 50px 15px rgb(56, 55, 55);
+}
+
+.tracks-img{
+    height: 300px;
+    width: 300px;
+    border:2px solid black;
+    border-radius: 5px;
+}
+
+.racist-img{
+    height: 200px;
+    width: 200px;
+    border:2px solid black;
+    float: left;
+    padding: 0px;
+    margin-right: 8px;
+    
+}
+
+.meet-racists{
+    text-align: center;
+    font-size: 100px;
+    margin: 15px;
+    color: black;
+    text-shadow: 0 0 5px rgb(72, 255, 0);
+    margin-bottom: 80px;
+}
+
+.iracist-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.iracist-container div{
+    padding: 20px;
+    width: 400px;
+    margin: 20px;
+    background-color: rgb(245, 239, 230);
+    box-shadow: 0 0 100px  rgb(24, 23, 23);
+    border-radius: 10%;
+    
+}
+
+.iracist-container div h3{
+    text-align: center;
+}
+
+/* footer */
+
+footer{
+    
+    background-color: rgb(101, 101, 187);
+    height: 30px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+footer a{
+    margin: 0;
+    padding: 0;
+}
+footer h3{
+   margin:0;
+   padding:0;
+   margin-top: 5px;
+}
