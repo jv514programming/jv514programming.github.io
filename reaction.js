@@ -7,7 +7,7 @@ function ScoreScreen(){
         if(scoreTime < 200){
           document.getElementById('g1h3').innerHTML +="Hi Ben!";
         }
-        if(scoreTime < 300){
+        if(scoreTime < 300 && scoreTime >= 200){
             document.getElementById('g1h3').innerHTML +="Not bad!";
         }else{ 
             document.getElementById('g1h3').innerHTML +="Getting too old for this aren't you?";
