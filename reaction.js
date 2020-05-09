@@ -4,6 +4,9 @@ function ScoreScreen(){
     document.getElementById('game-1').style.backgroundColor = 'blue';
     document.getElementById('g1h1').innerHTML = 'Score';
     document.getElementById('g1h3').innerHTML =  scoreTime +'ms<br>';
+        if(scoreTime < 200){
+          document.getElementById('g1h3').innerHTML +="Hi Ben!";
+        }
         if(scoreTime < 300){
             document.getElementById('g1h3').innerHTML +="Not bad!";
         }else{ 
