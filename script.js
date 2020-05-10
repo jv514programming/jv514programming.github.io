@@ -6,7 +6,7 @@ setTimeout(function(){
     document.getElementById('richardobackground1').style.backgroundColor = 'blueviolet'
     },5000);
 setTimeout(function(){
-    document.getElementById('richardobackground2').style.backgroundImage = "url('Lights.jpg')"
+    document.getElementById('richardobackground2').style.backgroundImage = "url('lights.jpg')"
     },10000);
     setTimeout(function(){setInterval(() => {
         colorCycle()
