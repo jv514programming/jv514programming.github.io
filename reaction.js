@@ -28,7 +28,7 @@ function notTooFast(){
 
 function change1() {   
     let tooFastCheck = false;
-    let time=(Math.random()*3000) + 2000;
+    let time=(Math.random()*2000) + 4000;
     document.getElementById('game-1').style.backgroundColor = 'pink';
     document.getElementById('g1h1').innerHTML = 'Start';
     document.getElementById('g1h3').innerHTML = 'Click when you see green';
