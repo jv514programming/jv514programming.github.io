@@ -17,9 +17,9 @@ setTimeout(function(){
     }, 20000);
 
 setTimeout(function(){
-    document.getElementById('richardobackground4').src = "richardoface.jpg";
+    richardoFadeFunc();
     document.getElementById('richardobackground4').style.border = "2px solid white"
-    },27000);
+    },26000);
 setTimeout(function(){
     document.getElementById('richardobackground3').style.backgroundImage = "url('richardo.gif')"
     }, 33100);
@@ -72,3 +72,18 @@ function youGotThat(){
             document.getElementById('line3').style.textShadow = "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
             }, 4500);
 }
+
+let fadeCount = 0;
+
+function richardoFadeFunc(){
+       setInterval(() => {
+        let faceOpacity = '0.' + fadeCount;
+        if(fadeCount < 10){
+            fadeCount += 1;
+           return document.getElementById('richardoFaceFade').style.opacity = faceOpacity;
+        } else {
+            return document.getElementById('richardoFaceFade').style.opacity = '1.0';
+        }
+    }, 100);
+}
+
