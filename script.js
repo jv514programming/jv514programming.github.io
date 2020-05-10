@@ -62,7 +62,7 @@ function youGotThat(){
         document.getElementById('line2').style.fontStyle = "normal";
         document.getElementById('line2').style.fontSize = "80px";
         document.getElementById('line2').style.textShadow = "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
-        }, 3000);
+        }, 2500);
 
         setTimeout(() => {
             document.getElementById('line3').innerHTML = 'THAT';
@@ -70,7 +70,7 @@ function youGotThat(){
             document.getElementById('line3').style.fontSize = "80px";
             document.getElementById('line3').style.fontStyle = "normal";
             document.getElementById('line3').style.textShadow = "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000";
-            }, 4500);
+            }, 3500);
 }
 
 let fadeCount = 0;
