@@ -5,6 +5,8 @@ let aimScore = -1;
 
 document.getElementById('clickStart').onclick = function(){beginAim()};
 document.getElementById('target').onclick = function(){setPos()};
+document.getElementById('target').onmouseover = function(){grow()};
+document.getElementById('target').onmouseout = function(){shrink()};
 
 function beginTime(){
     timeStart = setInterval(() => {
@@ -40,7 +42,8 @@ function beginAim(){
     beginTime();
 }
 
-
+let tempX;
+let tempY;
 
 function setPos(){
     let x = positionX();
@@ -52,15 +55,24 @@ function setPos(){
 }
 function positionY(){
     let yPos =  Math.floor(Math.random() * 400);
+    tempY = yPos;
     return  yPos + "px";
 }
 function positionX(){ 
     let xPos =  Math.floor(Math.random() * 1570) + 40;
+    tempX = xPos;
     return xPos + "px";
 }
 
-
-function gameOver(){
-
-     document.getElementById('target').style.display = "none";
+function grow(){
+    let yy = (tempY - 5) + "px";
+    let xx = (tempX - 5) + "px";
+    document.getElementById('target').style.top = yy;
+    document.getElementById('target').style.left = xx;
+}
+function shrink(){
+    let yy = tempY + "px";
+    let xx = tempX + "px";
+    document.getElementById('target').style.top = yy;
+    document.getElementById('target').style.left = xx;
 }

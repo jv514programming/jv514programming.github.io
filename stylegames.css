@@ -85,6 +85,8 @@ h1, h3 {
 }
 #target:hover{
     cursor: pointer;
+    height: 60px;
+    width: 60px;
 }
 
 #clickStart{
