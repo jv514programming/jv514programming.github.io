@@ -28,13 +28,18 @@ h1, h3 {
 }
 
 .game-container{
-    height: 500px;
+    height: 600px;
     width: 100%;
     border: 5px solid white;
     margin: 10px;
     background-color: rgb(176, 176, 207);
     border-radius: 10px;
     box-shadow: 10px 10px 10px black;
+}
+
+.game-container h1{
+    text-align: center;
+    padding-top: 40px;
 }
 
 #game-1{
@@ -48,6 +53,40 @@ h1, h3 {
     text-align: center;
 }
 
-#game-1 h1{
-    padding-top: 50px;
+#aim-box{
+    height: 440px;
+    width: 1650px;
+    position: relative;
+}
+#game-2{
+    position: relative;
+    padding: 30px 100px;
+    background-color: rgb(29, 171, 236);
+
+}
+
+#game-2 h1{
+    display: block;
+    padding: 0;
+    margin: 0;
+    
+}
+
+#target{
+    display: none;
+    position: absolute;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+#target:hover{
+    cursor: pointer;
+}
+
+#clickStart{
+    padding: 200px;
+    display: block;
+}
+#clickStart:hover{
+    cursor: pointer;
 }
