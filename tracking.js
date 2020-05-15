@@ -78,7 +78,7 @@ function beginTime2(){
             document.getElementById('start-tracking-box').style.display = "flex";
             document.getElementById('finish-score2').innerHTML = "Score: " + score2;
             document.getElementById('timer2').style.color = 'white';
-        }, 3010);
+        }, 4010);
     }
 },1000);
 }
