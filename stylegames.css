@@ -83,6 +83,7 @@ h1, h3 {
     background-position: center;
     background-size: cover;
 }
+
 #target:hover{
     cursor: pointer;
     height: 60px;
@@ -95,4 +96,45 @@ h1, h3 {
 }
 #clickStart:hover{
     cursor: pointer;
+}
+
+.game-3-container{
+    background-color: rgb(138, 138, 204);
+}
+
+#game-3 > h1{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.tracking-box{
+    height: 420px;
+    width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+#track-me{
+    display: none;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: green;
+    top: 0px;
+    left: 0px;
+    border: 1px solid black;
+}
+
+#start-tracking-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    border: 2px solid black;
+    flex-wrap: wrap;
+}
+#start-tracking-box h1{
+    width: 100%;
 }
