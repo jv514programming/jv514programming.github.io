@@ -31,17 +31,19 @@ function mouseOff(){
 
 function trackingBegin(){
 document.getElementById('start-tracking-box').onclick = function(){
-    timer2 = 29;
-    document.getElementById('timer2').innerHTML = timer2 ;
-    score2 = 0;
-    document.getElementById('score2').innerHTML = score2;
-    move = true;
-    timeStart2 = 0;
     this.style.display = "none";
     document.getElementById('track-me').style.display = "block";
-    mouseOn();
-    beginTime2();
-    aPoint();
+    setTimeout(() => {
+        timer2 = 29;
+        document.getElementById('timer2').innerHTML = timer2 ;
+        score2 = 0;
+        document.getElementById('score2').innerHTML = score2;
+        move = true;
+        timeStart2 = 0;
+        mouseOn();
+        beginTime2();
+        aPoint();
+    }, 10);
 }
 }
 
