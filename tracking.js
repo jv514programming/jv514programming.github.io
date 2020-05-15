@@ -8,7 +8,7 @@ var scoreUp;
 trackingBegin();
 
 function mouseOn(){
-document.getElementById('track-me').onmouseenter = function(){
+document.getElementById('track-me').onmouseover = function(){
     this.style.backgroundColor = "chartreuse";
     scoreUp = setInterval(increaseScore, 20);
 }
@@ -19,7 +19,7 @@ document.getElementById('track-me').onmouseout = function(){
 }
 
 function mouseOff(){
-    document.getElementById('track-me').onmouseenter = function(){
+    document.getElementById('track-me').onmouseover= function(){
         this.style.backgroundColor = "green";
         clearInterval(scoreUp);
     }
