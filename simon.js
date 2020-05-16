@@ -135,7 +135,7 @@ function redClickable(){
             }, 20);
         setTimeout(() => {
             rP.style.backgroundColor = "rgb(138, 1, 1)"; 
-            }, 500);
+            }, 250);
         if(redInPlay == true){
             score++;
             round++;
@@ -143,7 +143,7 @@ function redClickable(){
         } else {
             setTimeout(() => {
                gameOver();
-           }, 510);
+           }, 300);
         }
     }
     fC.style.display = "none";
@@ -162,7 +162,7 @@ function yellowClickable(){
             }, 20);
         setTimeout(() => {
             yP.style.backgroundColor = "rgb(145, 145, 2)"; 
-            }, 500);
+            }, 250);
         if(yellowInPlay == true){
             score++;
             round++;
@@ -170,7 +170,7 @@ function yellowClickable(){
         } else {
            setTimeout(() => {
                gameOver();
-           }, 510);
+           }, 300);
         }
     }
     fC.style.display = "none";
@@ -189,7 +189,7 @@ function greenClickable(){
             }, 20);
         setTimeout(() => {
             gP.style.backgroundColor = "rgb(1, 66, 1)"; 
-            }, 500);
+            }, 250);
         if(greenInPlay == true){
             score++;
             round++;
@@ -197,7 +197,7 @@ function greenClickable(){
         } else {
            setTimeout(() => {
                gameOver();
-           }, 510);
+           }, 300);
         }
     }
     fC.style.display = "none";
@@ -216,7 +216,7 @@ function blueClickable(){
             }, 20);
         setTimeout(() => {
             bP.style.backgroundColor = "rgb(0, 0, 134)"; 
-            }, 500);
+            }, 250);
         if(blueInPlay == true){
             score++;
             round++;
@@ -224,7 +224,7 @@ function blueClickable(){
         } else {
            setTimeout(() => {
                gameOver();
-           }, 510);
+           }, 300);
         }
     }
     fC.style.display = "none";
@@ -367,7 +367,7 @@ function gameOver(){
     setTimeout(() => {
         playing = true;
         restart();
-    }, 7000);
+    }, 6500);
 }
 
 function victory(){
