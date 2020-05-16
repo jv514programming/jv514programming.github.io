@@ -69,10 +69,10 @@ function playButtonOn(){
                                 selectPanel();
                                 guyAnimation();
                             }, 500);
-                        }, 1000);
-                    }, 1200);
-                }, 1000);
-            }, 1000);
+                        }, 800);
+                    }, 1000);
+                }, 800);
+            }, 800);
         }, 200);
     }
 }
@@ -289,32 +289,32 @@ function playPanels(){
                 setTimeout(() => {
                     rP.style.backgroundColor = "rgb(138, 1, 1)";
                     i++;
-                }, 900);
+                }, 600);
             } else if(playedPanels[i] == 'yellow'){
                 yP.style.backgroundColor = "yellow";
                 setTimeout(() => {
                     yP.style.backgroundColor = "rgb(145, 145, 2)";
                     i++;
-                }, 900);
+                }, 600);
             } else if(playedPanels[i] == 'green'){
                 gP.style.backgroundColor = "green";
                 setTimeout(() => {
                     gP.style.backgroundColor = "rgb(1, 66, 1)";
                     i++;
-                }, 900);
+                }, 600);
             }
             else if(playedPanels[i] == 'blue'){
                 bP.style.backgroundColor = "blue";
                 setTimeout(() => {
                     bP.style.backgroundColor = "rgb(0, 0, 134)";
                     i++;
-                }, 900);
+                }, 600);
             } else {
                 fC.style.display = "none";
                 clearInterval(p);
                 selectPanel();
             }
-        }, 1200);
+        }, 800);
 }
 
 function nextRound(){
@@ -441,7 +441,7 @@ function playAnimation(){
                 rP.style.backgroundColor = "rgb(138, 1, 1)";
                 x++;
                 y++;
-                }, 120);
+                }, 100);
             }
             if(x == 1){
                 yP.style.backgroundColor = "yellow";
@@ -449,7 +449,7 @@ function playAnimation(){
                     yP.style.backgroundColor = "rgb(145, 145, 2)";
                     x++;
                     y++;
-                    }, 120);
+                    }, 100);
             }
             if(x == 2){
                 gP.style.backgroundColor = "green";
@@ -457,7 +457,7 @@ function playAnimation(){
                     gP.style.backgroundColor = "rgb(1, 66, 1)";
                     x++;
                     y++;
-                    }, 120);
+                    }, 100);
             }
             if(x == 3){
                 bP.style.backgroundColor = "blue";
@@ -465,7 +465,7 @@ function playAnimation(){
                     bP.style.backgroundColor = "rgb(0, 0, 134)";
                     x = 0;
                     y++;
-                    }, 120);
+                    }, 100);
             }
         } else {
             setTimeout(() => {
@@ -482,5 +482,5 @@ function playAnimation(){
             }, 1000);
             clearInterval(animation);
         }
-    }, 150);
+    }, 120);
 }
