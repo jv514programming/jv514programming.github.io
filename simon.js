@@ -365,7 +365,7 @@ function gameOver(){
     setTimeout(() => {
         playing = true;
         restart();
-    }, 10000);
+    }, 8000);
 }
 
 function victory(){
