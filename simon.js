@@ -338,7 +338,9 @@ function nextRound(){
         } else {
             round = 0;
             score = 0;
-            playPanels();
+            setTimeout(() => {
+                playPanels();
+            }, 1000);
         }
     } else {
         victory();
