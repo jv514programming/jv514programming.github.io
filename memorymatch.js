@@ -31,7 +31,7 @@ function startNewGame(){
     if(brosnanMode == true){
         setTimeout(() => {
         music.play();
-        music.volume = 0.5;
+        music.volume = 0.4;
         }, 1000);
     }
 
