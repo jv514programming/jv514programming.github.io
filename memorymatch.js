@@ -117,7 +117,6 @@ function flipCard(c){
                 }, 1000);
             }
         }
-        
     }
 }
 
@@ -132,13 +131,27 @@ function flipCountdown(){
 }
 
 function victory(){
-   setTimeout(() => {
-    music.pause();
-    music.currentTime = 0;
-    overlay.style.display = 'flex';
-    overlay1.innerHTML = "Matched All!";
-    overlay2.innerHTML = 'click to try again';
-   }, 1000); 
+    if(brosnanMode == false){
+        startBrosnan();
+        overlay.style.display = 'flex';
+        overlay1.innerHTML = "Matched All!";
+        overlay2.innerHTML = 'Get ready for Brosnan';
+        setTimeout(() => {
+            overlay.classList.add('fade-out');
+        }, 1500);
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            overlay.classList.remove('fade-out');
+        }, 3500);
+    }else {
+        setTimeout(() => {
+            music.pause();
+            music.currentTime = 0;
+            overlay.style.display = 'flex';
+            overlay1.innerHTML = "Matched All!";
+            overlay2.innerHTML = 'click to try again';
+        }, 1000);
+    } 
 }
 
 function gameOver(){
@@ -154,6 +167,10 @@ function gameOver(){
 // -----Brosnan-mode-----
 
 bb.onclick = function(){
+   startBrosnan();
+}
+
+function startBrosnan(){
     bb.classList.add('fade-out');
     setTimeout(() => {
         bb.classList.remove('fade-out');
