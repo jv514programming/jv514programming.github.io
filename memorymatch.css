@@ -12,9 +12,11 @@ html, body{
     padding: 0%;
     height: 100%;
     width: 100%;
-    background: radial-gradient(rgb(58, 58, 58),rgb(14, 13, 13));
-    text-align: center;
     color: rgb(241, 83, 83);
+}
+
+body{
+    background: radial-gradient(rgb(58, 58, 58),rgb(14, 13, 13));
 }
 
 #overlay{
@@ -31,6 +33,7 @@ html, body{
     font-size: 50px;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     background-color: rgb(8, 8, 8, 0.7);
+    text-align: center;
 }
 
 #overlay-box > h1,h4{
@@ -61,12 +64,18 @@ img{
     justify-content: center;
 }
 
-
 .game-title{
     font-size: 60px;
     padding:10px;
 }
 
+.title-container{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    max-width: 600px;
+    margin: auto;
+}
 
 .flips{
     display: flex;
@@ -77,7 +86,6 @@ img{
     font-size: 40px;
     font-weight: bold;
 }
-
 
 .card-front{
     position: absolute;
@@ -97,7 +105,6 @@ img{
     height: 80px;
     width: 80px;
     transition: ease-in-out 300ms;
-  
 }
 
 .card-front:hover{
@@ -180,4 +187,49 @@ img{
   @keyframes fadeOut{
     0%   {opacity: 1;}
     100% {opacity: 0;}
+  }
+
+  .brosnan-button{
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    z-index: 9;
+    font-family: 'Hind', sans-serif;
+    color: gray;
+    top: 10px;
+    right: 5%;
+    padding: 8px;
+    text-align: center;
+    width: 120px;
+    font-weight: bold;
+  }
+
+  .brosnan-button:hover{
+      background-color: rgb(41, 41, 41);
+      border: 1px solid gray;
+      cursor: pointer;
+  }
+
+  .brosnan-button-engaged{
+      animation: buttonEngaged 2s;
+      animation-fill-mode: forwards;
+  }
+
+  @keyframes buttonEngaged{
+    0%   {transform: translateY(1px);}
+    100% {transform: translateY(-100px);}
+  }
+
+  .brosnan-movie-overlay{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+
+  video{
+      min-width: 100%;
   }

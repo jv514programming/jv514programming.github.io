@@ -9,6 +9,12 @@ let currentPair;
 let lastCard;
 let flipCount;
 let winPoint;
+let brosnanMode = false;
+// brosnan stuff
+let bb = document.querySelector('.brosnan-button');
+let bo = document.querySelector('.brosnan-movie-overlay');
+let music = document.querySelector('.music');
+// brosnan stuff
 
 overlay.onclick = function(){
     overlay.style.display = 'none';
@@ -22,6 +28,12 @@ function startNewGame(){
     flipCount = 10;
     winPoint = 0;
     flipCounter.innerHTML = flipCount;
+    if(brosnanMode == true){
+        setTimeout(() => {
+        music.play();
+        music.volume = 0.5;
+        }, 1000);
+    }
 
     firstCardArray.forEach((card) =>{
         card.classList.remove('visible');
@@ -51,6 +63,7 @@ function startNewGame(){
     let h = 0;
     let j = 0;
     for(i = 0; i < firstCardArray.length; i++){
+        firstCardArray[i].indentify = i;
         if (h == 0){
             firstCardArray[i].pair = h;
             h++
@@ -82,7 +95,7 @@ function flipCard(c){
             lastCard = c;
             busy = false;
         }else{
-            if(c.pair == currentPair){
+            if(c.pair == currentPair && c.indentify != lastCard.indentify){
                 lastCard.classList.add('fade-out');
                 c.classList.add('fade-out');
                 currentPair = null;
@@ -92,7 +105,7 @@ function flipCard(c){
                     busy = true;
                    victory();
                 }
-            } else{
+            } else if (c.pair != currentPair ){
                 busy = true;
                 flipCountdown();
                 setTimeout(() => {
@@ -120,6 +133,8 @@ function flipCountdown(){
 
 function victory(){
    setTimeout(() => {
+    music.pause();
+    music.currentTime = 0;
     overlay.style.display = 'flex';
     overlay1.innerHTML = "Matched All!";
     overlay2.innerHTML = 'click to try again';
@@ -128,8 +143,92 @@ function victory(){
 
 function gameOver(){
     setTimeout(() => {
+        music.pause();
+        music.currentTime = 0;
         overlay.style.display = 'flex';
         overlay1.innerHTML = "Out of attempts!";
         overlay2.innerHTML = 'click to try again';
     }, 1000);
+}
+
+// -----Brosnan-mode-----
+
+bb.onclick = function(){
+    bb.classList.add('fade-out');
+    setTimeout(() => {
+        bb.classList.remove('fade-out');
+        bb.innerHTML = "ACTIVATED";
+        bb.style.color = "white";
+        bb.style.padding = "2px";
+        bb.classList.add('fade-in');
+    }, 2000);
+    setTimeout(() => {
+        bb.classList.add('brosnan-button-engaged');
+    }, 3500);
+    setTimeout(() => {
+        bo.style.display = 'flex';
+        bo.classList.add("fade-in");
+        document.querySelector('video').play();
+    }, 4000);
+    setTimeout(() => {
+        brosnanTransform();
+    }, 7000);
+    setTimeout(() => {
+        bo.classList.remove("fade-in");
+        bo.classList.add("fade-out");
+    }, 20000);
+    setTimeout(() => {
+        document.querySelector('video').pause();
+        bo.style.display = 'none';
+    }, 22000);
+}
+
+function brosnanTransform(){
+    let avenger = document.querySelectorAll('img[src="movies/avengers.jpg"]')
+    let darkknight = document.querySelectorAll('img[src="movies/darkknight.jpg"]')
+    let lotr = document.querySelectorAll('img[src="movies/lotr.jpg"]')
+    let potter = document.querySelectorAll('img[src="movies/potter.jpg"]')
+    let starwars = document.querySelectorAll('img[src="movies/starwars.jpg"]')
+    let godfather = document.querySelectorAll('img[src="movies/godfather.jpg"]')
+    let matrix = document.querySelectorAll('img[src="movies/matrix.jpg"]')
+    let jaws = document.querySelectorAll('img[src="movies/jaws.jpg"]') 
+    let card007 = document.querySelectorAll('img[src="movies/movielogo.png"]');
+    let cardFront = document.querySelectorAll('.card-front');
+    card007.forEach(element => {
+        element.setAttribute('src', 'movies/007.jpg');
+    });
+    cardFront.forEach(e => {
+        e.style.background = 'radial-gradient(black 70%, gray 99%)';
+    });
+    document.querySelector('body').style.background = 'radial-gradient(rgb(107, 1, 1),black)';
+    document.querySelector('.game-title').innerHTML = "Brosnan Match";
+    //
+    avenger.forEach(e => {
+        e.src = "movies/brosnan/goldeneye.jpg";
+    });
+    darkknight.forEach(e => {
+        e.src = "movies/brosnan/novemberman.jpg";
+    });
+    lotr.forEach(e => {
+        e.src = "movies/brosnan/anotherday.jpg";
+    });
+    potter.forEach(e => {
+        e.src = "movies/brosnan/neverdies.jpg";
+    });
+    starwars.forEach(e => {
+        e.src = "movies/brosnan/notenough.jpg";
+    });
+    godfather.forEach(e => {
+        e.src = "movies/brosnan/ghostwriter.jpg";
+    });
+    matrix.forEach(e => {
+        e.src = "movies/brosnan/lovepunch.jpg";
+    });
+    jaws.forEach(e => {
+        e.src = "movies/brosnan/thomascrown.jpg";
+    });
+    brosnanMode = true;
+    setTimeout(() => {
+        startNewGame();
+    }, 13000);
 }

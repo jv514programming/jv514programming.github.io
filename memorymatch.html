@@ -6,21 +6,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="memorymatch.css">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="brosnan-movie-overlay">
+        <video>
+            <source src="movies/goldeneye.mp4" type="video/mp4">
+          </video>
+    </div>
     <div id="overlay">
         <div id="overlay-box">
             <h1 id="overlay-1">Click to Start</h1>
             <h4 id="overlay-2"></h4>
         </div>
     </div>
+    <div class="brosnan-button">Brosnan Mode</div>
+    <div class="title-container">
     <h1 class="game-title">Movie Match</h1>
+    </div>
     <div class="flips">
         <span>Attempts Remaining: <span id="flips"></span></span>
     </div>
     <div class="card-container">
         <div class="card card-1">
-            <div class="card-front one"><img class="one" src="movies/movielogo.png"></div>
+            <div class="card-front"><img src="movies/movielogo.png"></div>
             <div  class="card-back"><img  src="movies/darkknight.jpg"></div>
         </div>
         <div class="card card-2">
@@ -37,11 +46,11 @@
         </div>
         <div class="card card-5">
             <div class=" card-front"><img  src="movies/movielogo.png"></div>
-            <div  class=" card-back"><img  src="movies/goldeneye.jpg"></div>
+            <div  class=" card-back"><img  src="movies/avengers.jpg"></div>
         </div>
         <div class="card card-6">
             <div class=" card-front"><img src="movies/movielogo.png"></div>
-            <div  class=" card-back"><img  src="movies/goldeneye.jpg"></div>
+            <div  class=" card-back"><img  src="movies/avengers.jpg"></div>
         </div>
         <div class="card card-7">
             <div class=" card-front"><img  src="movies/movielogo.png"></div>
@@ -84,10 +93,8 @@
             <div  class="card-back"><img  src="movies/starwars.jpg"></div>
         </div>
     </div>
- 
-    
-
-
+    <audio class="music" src="movies/theme.mp3">
+    </audio>
  <script src="memorymatch.js"></script>   
 </body>
 </html>
