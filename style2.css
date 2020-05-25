@@ -232,3 +232,10 @@ footer{
     border: 2PX solid blueviolet;
     cursor: pointer;
 }
+
+.video-container{
+    text-align: center;
+}
+.video-container video{
+    border: 2px solid black;
+}
