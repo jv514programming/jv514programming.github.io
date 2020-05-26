@@ -37,7 +37,7 @@ html,body{
 }
 
 .etch-div{
-    background-image: url('./sketchpad/etch.jpg');
+    background-image: url('sketchpad/etch.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
