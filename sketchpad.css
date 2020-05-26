@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1110px;
+}
+
+.shake-button{
+    position: fixed;
+    top: 10px;
+    left: 2%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+    background: radial-gradient(at 30% top, rgb(241, 208, 208) 1%, rgb(255, 0, 0) 50%);
+    border-radius: 50%;
+    padding-top: 27px;
+    border: 1px solid red;
+    color: seashell;
+    box-shadow: 3px 3px 10px 3px black;
+    user-select: none;
+    z-index: 10;
+}
+
+.shake-button:hover{
+    cursor: pointer;
+}
+
+.etch-div{
+    background-image: url('sketchpad/etch.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 820px;
+    width: 1000px;
+    border-radius: 10px;
+    position: relative;
+    margin:50px;
+    box-shadow: 5px 10px 30px 10px black;
+}
+
+.board-container{
+    position: absolute;
+    width: 730px;
+    height: 532px;
+    background: radial-gradient(rgb(153, 153, 153),rgb(61, 61, 61) 90%);
+    border-radius: 20px;
+    top: 132px;
+    left: 134px;
+    border: 5px solid rgb(248, 19, 19);
+    display: grid;
+    grid-template-columns: repeat(80, 1fr);
+    grid-template-rows: repeat(60,1fr);
+}
+
+.item{
+    border-radius: 1px;
+    background: rgb(145, 143, 143);
+    opacity: 0.7;
+    user-select: none;
+}
+
+.drawn{
+    background-color: black;
+}
+
+
+
+
+.shake{
+    animation: shake 700ms ease-in-out;
+}
+
+@keyframes shake{
+    0%{
+        transform: rotate(-7deg);
+    }
+    20%{
+        transform: rotate(7deg);
+        box-shadow: 0px 0px 0px 0px black;
+    }
+    40%{
+        transform: rotate(-7deg);
+    }
+    60%{
+        transform: rotate(7deg);
+        box-shadow: 0px 0px 0px 0px black;
+    }
+    80%{
+        transform: rotate(-7deg);
+    }
+    1000%{
+        transform: rotate(7deg);
+    }
+}
+
+.fade-out{
+    animation: fadeOut 700ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+    0%{
+        background: black;
+    }
+    100%{
+        background: rgb(145, 143, 143);
+    }
+}
+
+.button-move{
+    animation: depress 300ms ease-in-out;
+}
+
+@keyframes depress{
+    0%{
+        transform: translateX(1px) translateY(1px);
+        
+    }
+    50%{
+        transform: translateX(1px) translateY(2px);
+        height: 95px;
+        width: 95px;
+        font-size: 29px;
+        box-shadow: 3px 3px 3px 3px black;
+    }
+    100%{
+        
+    }
+}
