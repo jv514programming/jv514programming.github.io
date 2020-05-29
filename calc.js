@@ -40,19 +40,33 @@ function outputNum(e){
         canBackspace = true;
         if(calcStarted == false){
             if(mainNum.length < 9){
-                mainNum += e;
-                screen.innerHTML = mainNum;
+                if(mainNum === '0' && e === '0'){
+                }else{
+                    if (mainNum === '0'){
+                        mainNum = e;
+                    } else{
+                        mainNum += e;
+                    }
+                        screen.innerHTML = mainNum;
+                        currentOperator = pendingOperator;
+                        toExecute = true;  
+                }
             }
         } else {
             if(pendingNum.length < 9){
-                pendingNum += e;
-                screen.innerHTML = pendingNum;
-                currentOperator = pendingOperator;
-                toExecute = true;
-                
+                if(pendingNum === '0' && e === '0'){
+                }else{
+                    if (pendingNum === '0'){
+                        pendingNum = e;
+                    } else{
+                        pendingNum += e;
+                    }
+                        screen.innerHTML = pendingNum;
+                        currentOperator = pendingOperator;
+                        toExecute = true;      
+                } 
             }
         }
-   
     }
 }
 
@@ -114,6 +128,7 @@ function executing(){
 function clear(){
     screen.innerHTML = '';
     screenHistory.innerHTML = '';
+    operatorScreen.innerHTML = '';
     mainNum = '';
     pendingNum = '';
     calcStarted = false;
