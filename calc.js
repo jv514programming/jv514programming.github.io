@@ -11,6 +11,7 @@ let currentOperator = '';
 let toExecute = false;
 let canBackspace = false;
 let dividedByZero = false;
+let tooBig = false;
 
 buttons.forEach(e => {
     e.addEventListener('click', function(){
@@ -26,7 +27,7 @@ function executeButton(e){
        operator(e);
     } else if(e == 'C'){
         clear();
-    } else if(e == '⌫'){
+    } else if(e == 'BS'){
         backspace();
     }else if(e == '.'){
         decimal();
@@ -36,7 +37,7 @@ function executeButton(e){
 }
 
 function outputNum(e){
-    if(dividedByZero == false){
+    if(dividedByZero == false && tooBig == false){
         canBackspace = true;
         if(calcStarted == false){
             if(mainNum.length < 9){
@@ -71,7 +72,7 @@ function outputNum(e){
 }
 
 function operator(e){
-    if(dividedByZero == false){
+    if(dividedByZero == false && tooBig == false){
         canBackspace = false;
         if(calcStarted == false){
             screenHistory.innerHTML = mainNum;
@@ -113,10 +114,16 @@ function executing(){
     }
     if(dividedByZero == false){
         mainNum = Math.round(mainNum * 10000) /10000;
-        mainNum = mainNum.toString();
-        screenHistory.innerHTML = mainNum;
-        pendingNum = '';
-        canBackspace = false;
+        if(mainNum>99999999999999){
+            screenHistory.innerHTML = '';
+            screen.innerHTML = 'Too Big';
+            tooBig = true;
+        }else{
+            mainNum = mainNum.toString();
+            screenHistory.innerHTML = mainNum;
+            pendingNum = '';
+            canBackspace = false;
+        }
     } else{
        canBackspace = false;
        screenHistory.innerHTML = '';
@@ -136,6 +143,7 @@ function clear(){
     currentOperator = '';
     toExecute = false;
     dividedByZero = false;
+    tooBig = false;
 }
 
 function backspace(){
@@ -182,7 +190,7 @@ function decimal(){
 function equals(){
   executing();
   toExecute = false;
-  if(dividedByZero == false){
+  if(dividedByZero == false && tooBig == false){
     screen.innerHTML = mainNum;
   }
 }
