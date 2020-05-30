@@ -49,7 +49,8 @@ songs.forEach(e => {
 function loadSong(e){
     let ne = e.nextElementSibling;
     console.log(ne);
-    activeSong.src = ne.src; 
+    activeSong.src = ne.src;
+    playButton(); 
 }
 
 
