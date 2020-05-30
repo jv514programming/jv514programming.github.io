@@ -5,6 +5,27 @@ let playB = document.querySelector('.play');
 let stopB = document.querySelector('.stop');
 let pauseB = document.querySelector('.pause');
 let rewindB = document.querySelector('.rewind');
+let controls = document.querySelectorAll('.controls');
+
+
+controls.forEach(function(e){
+    e.addEventListener('mousedown', function(){
+        console.log('test');
+        e.style.boxShadow = '0px 0px 15px 1px rgb(65, 65, 65)';
+    });
+    e.addEventListener('mouseup', function(){
+        console.log('test');
+        e.style.boxShadow = '0px 0px 15px 1px rgb(173, 173, 173)';
+    });
+    e.addEventListener('mouseenter', function(){
+        console.log('test');
+        e.style.boxShadow = '0px 0px 15px 1px rgb(173, 173, 173)';
+    });
+    e.addEventListener('mouseleave', function(){
+        console.log('test');
+        e.style.boxShadow = 'none';
+    });
+});
 
 
 
