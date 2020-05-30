@@ -40,7 +40,6 @@ html,body{
     font-size: 40px;
     color: rgb(151, 149, 149);
     font-weight: bold;
-    text-decoration: underline;
     line-height: 200%;
 }
 
@@ -49,10 +48,14 @@ html,body{
     margin: 10px;
 }
 
+a{
+    padding: 10px;
+    border-radius: 10px;
+}
+
 a:visited{
     text-decoration: none;
     color: rgb(151, 149, 149);
-
 }
 
 a:link{
@@ -60,14 +63,18 @@ a:link{
     color: rgb(151, 149, 149);
 }
 
+a:hover{
+    background-color: rgb(63, 63, 63);
+}
+
 ul{
     list-style-type: none;
+    text-align: center;
 }
 
 footer{
-    height: 100px;
+    height: 70px;
     width: 100%;
-    
 }
 
 @media only screen and (max-width: 1300px) {
