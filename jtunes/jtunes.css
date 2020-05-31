@@ -12,7 +12,7 @@ html,body{
 .main-wrapper{
     height: 100%;
     width: 100%;
-    background: radial-gradient(circle at 32% bottom, rgb(247, 245, 245, 0.2) 10%, rgb(107, 107, 107, 0.8)70%);
+    background: radial-gradient(circle at 50% bottom, rgb(247, 245, 245, 0.1) 10%, rgba(121, 121, 121, 0.7)60%);
 }
 
 .title{
