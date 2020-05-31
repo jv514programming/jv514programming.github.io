@@ -21,8 +21,8 @@ html,body{
     color: rgb(255, 255, 255);
     width: 100%;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 2.5em;
 }
 
@@ -100,6 +100,7 @@ html,body{
     justify-content: space-around;
     align-items: center;
     max-width: 800px;
+    padding-top: 5px;
 }
 
 .active{
@@ -172,5 +173,9 @@ html,body{
     }
     .active-img-div {
         height: 90%;
+    }
+    .title{
+        padding-top: 20px;
+        padding-bottom: 10px;
     }
   }
