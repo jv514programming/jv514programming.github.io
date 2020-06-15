@@ -65,9 +65,20 @@ function warningSelect(n){
         $(warning).fadeIn(250);
     }
     if(n == 3){
-        totalDeaths.innerHTML = 'Unknown';
-        warning.innerHTML = '..Trouble retrieving total deaths';
-        $(warning).fadeIn(250);
+        totalDeaths.innerHTML = 'Total deaths in US';
+        setTimeout(() => {
+            totalDeaths.innerHTML += '.';
+        }, 1000);
+        setTimeout(() => {
+            totalDeaths.innerHTML += '.';
+        }, 2000);
+        setTimeout(() => {
+            totalDeaths.innerHTML += '.';
+        }, 3000);
+        setTimeout(() => {
+            warning.innerHTML = '..Trouble retrieving total deaths';
+            $(warning).fadeIn(250);
+        }, 4000);
     }
 }
 
@@ -164,7 +175,7 @@ function getTotalDeaths(){
         }
     })
     .then(function(data){
-        totalDeaths.innerHTML = data[0].death;
+        totalDeaths.innerHTML = `Total US deaths involving Covid: <span class="total-deaths text-danger">${data[0].death}</span>`;
     })
     .catch(function(err){
         warningSelect(3);
