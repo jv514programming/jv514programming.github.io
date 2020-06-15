@@ -12,11 +12,13 @@ let warning = document.querySelector('.alert');
 let lastUpload = document.querySelector('.last-upload');
 let totalTested = document.querySelector('.total-tested');
 let recovered = document.querySelector('.recovered');
+let totalDeaths = document.querySelector('.total-deaths');
 let activeState;
 let started = false;
 //states variable in states.js
 
 formControl.style.color = 'lightgray';
+getTotalDeaths();
 
 // creating the state selector
 for(i=0; i < states.length; i++){    
@@ -39,10 +41,11 @@ stateSelection.addEventListener('change', function(){
 // main submit button
 $("button").on('click',function(e){
     e.preventDefault();
+    $(warning).fadeOut();
     if(stateSelection.value == "select a state"){
         warningSelect(1);
     }else{
-        $(warning).fadeOut(1);
+        $(warning).fadeOut();
         let lookup = stateSelection.value.toLowerCase();
         getCov(lookup);
     }
@@ -58,7 +61,12 @@ function warningSelect(n){
         console.error('Select a state');
     }
     if(n == 2){
-        warning.innerHTML = '..Trouble retrieving data';
+        warning.innerHTML = '..Trouble retrieving data about state';
+        $(warning).fadeIn(250);
+    }
+    if(n == 3){
+        totalDeaths.innerHTML = 'Unknown';
+        warning.innerHTML = '..Trouble retrieving total deaths';
         $(warning).fadeIn(250);
     }
 }
@@ -127,6 +135,8 @@ function parseData(data){
     }, 250);
 }
 
+
+
 function getCov(lookup){
     fetch(`https://covidtracking.com/api/v1/states/${lookup}/current.json`)
     .then(function(res){
@@ -139,10 +149,25 @@ function getCov(lookup){
         searchStates();
         parseData(data);
         displayContent();
-        console.log(data);
     })
     .catch(function(err){
         warningSelect(2);
+        console.error(err);
+    })
+}
+
+function getTotalDeaths(){
+    fetch(`https://covidtracking.com/api/v1/us/current.json`)
+    .then(function(res){
+        if(res.ok){
+            return res.json();
+        }
+    })
+    .then(function(data){
+        totalDeaths.innerHTML = data[0].death;
+    })
+    .catch(function(err){
+        warningSelect(3);
         console.error(err);
     })
 }
