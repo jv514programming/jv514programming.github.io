@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    background-color: #333;
+    width: 100%;
+}
+
+.initial-state-selection{
+    width: 200px;
+}
+
+.card{
+    min-width: 200px;
+    border: 2px solid gray;
+}
+
+/* fixing bootstrap default behavior */
+.submit:focus{
+    transition: none;
+    box-shadow: none;
+}
+
+/* for making jquery fades work */
+.state-info{
+    display: none;
+}
+
+.theContent{
+    max-width: 1200px;
+}
+
+/* for making jquery fades work */
+.theContent > *{
+    display: none;
+}
+
+/* for making jquery fades work */
+.recovered{
+    display: none;
+}
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(63, 62, 62);
+}
+
+option{
+    color: black;
+    font-weight: bold;
+}
+
+.alert{
+    display: none;
+    width: 300px;
+    font-weight: bold;
+}

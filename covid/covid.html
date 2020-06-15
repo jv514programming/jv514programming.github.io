@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Tracker</title>
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Responsive Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="covid.css">
+</head>
+
+<body>
+    <h1 class="display-2 text-light mt-2 text-center">Covid Tracker</h1>
+    <div class="initial-state-selection text-center mx-auto">
+        <h3 class="text-light">Select a State</h3>
+        <form>
+            <div class="form-group">
+                <select required autofocus class="form-control state-selection">
+                    <option style="color: lightgray; font-weight: normal;" value="select a state">--Select a State--</option>
+                </select>
+                <button class="btn btn-light m-2 submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- something went wrong -->
+    <div class="alert alert-warning mx-auto text-center">
+    </div>
+
+    <div class="text-center state-info">
+        <h3 class="display-4 text-light current-state">.</h3>
+        <h6 class="last-upload h6 text-light">.</h6>
+        <h6 class="total-tested h6 text-light">.</h6>
+    </div>
+
+    <!-- main content area -->
+    <div class="theContent d-flex justify-content-around align-content-around flex-wrap mx-auto">
+        <div class="card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="covid-img/covid-test.jpg" alt="Card image cap" height="200" width="200">
+            <div class="card-body">
+              <p class="card-text">The number of people who have tested positive for Covid-19 in <span class="state"></span> is <span class="text-danger current-tested"></span>.</p>
+            </div>
+          </div>
+          <div class="card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="covid-img/covid-hospital.jpg" alt="Card image cap" height="200" width="200">
+            <div class="card-body">
+              <p class="card-text">The number of people who are currently hospitalized in <span class="state"></span> due to Covid-19 is <span class="text-danger current-hospitalized"></span>.</p>
+            </div>
+          </div>
+          <div class="card m-2" style="width: 18rem;">
+            <img class="card-img-top" src="covid-img/covid-death.jpg" alt="Card image cap" height="200" width="200">
+            <div class="card-body">
+              <p class="card-text">The number of people who have died as a result of Covid-19 in <span class="state"></span> is <span class="text-danger current-dead"></span>.</p>
+            </div>
+          </div>
+    </div>
+    <h3 class="recovered m-5 text-center text-light"></h3>
+
+    <footer class="text-light text-center">Data gathered from <a href="https://covidtracking.com/" target="_blank">https://covidtracking.com/</a></footer>
+</body>
+
+<!-- Bootstrap dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- custom js -->
+<script src="states.js"></script>
+<script src="covid.js"></script>
+
+</html>
