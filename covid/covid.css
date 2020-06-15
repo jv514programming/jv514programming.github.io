@@ -63,4 +63,14 @@ option{
     max-width: 7%;
     min-width: 100px;
     height: auto;
+    animation: spin 100s infinite linear;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

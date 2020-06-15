@@ -146,8 +146,6 @@ function parseData(data){
     }, 250);
 }
 
-
-
 function getCov(lookup){
     fetch(`https://covidtracking.com/api/v1/states/${lookup}/current.json`)
     .then(function(res){
