@@ -1,3 +1,4 @@
+let body = document.querySelector('body');
 let theContent = document.querySelector('.theContent').children;
 let state = document.querySelectorAll('.state');
 let currentTested = document.querySelector('.current-tested');
@@ -13,12 +14,31 @@ let lastUpload = document.querySelector('.last-upload');
 let totalTested = document.querySelector('.total-tested');
 let recovered = document.querySelector('.recovered');
 let totalDeaths = document.querySelector('.total-deaths');
+let virus = document.querySelector('.virus');
 let activeState;
 let started = false;
 //states variable in states.js
 
+
 formControl.style.color = 'lightgray';
+setBackground();
 getTotalDeaths();
+window.addEventListener('resize',() => setBackground());
+
+//dynamic background for virus img
+function setBackground(){
+    let tWidth = body.clientWidth;
+    let virusImg = virus.getBoundingClientRect();
+    let bGWidth = (virusImg.left) + (virusImg.width / 2 );
+    let bGHeight = (virusImg.top) + ((virusImg.height / 2) - 8);
+    if(tWidth > 1200){
+        body.style.background = `radial-gradient(circle at ${bGWidth}px ${bGHeight}px,green, #333 8%)`;
+    }else if( tWidth >= 700 && tWidth <= 1200){
+        body.style.background = `radial-gradient(circle at ${bGWidth}px ${bGHeight}px,green, #333 10%)`;
+    }else{
+        body.style.background = `radial-gradient(circle at ${bGWidth}px ${bGHeight}px,green, #333 12%)`;
+    }
+}
 
 // creating the state selector
 for(i=0; i < states.length; i++){    
